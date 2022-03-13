@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | 3-column preview card component</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      :root {
+        --default-size: 15px;
+        --border-radius: 10px;
+      }
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Lexend Deca", sans-serif;
+        color: hsl(0, 0%, 95%);
+      }
+      .wrapper {
+        background-color: hsl(0, 0%, 95%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: var(--default-size);
+        min-height: 100vh;
+      }
+      .container {
+        margin: calc(3 * var(--default-size)) var(--default-size);
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "sedans"
+          "suvs"
+          "luxury";
+      }
+      .container h1 {
+        font-family: "Big Shoulders Display", cursive;
+        text-transform: uppercase;
+      }
+      .container div > * {
+        margin-bottom: calc(2 * var(--default-size));
+      }
+      .container p {
+        line-height: 1.5;
+        opacity: 0.7;
+      }
+      .container > div {
+        padding: calc(2 * var(--default-size));
+        display: grid;
+        justify-items: start;
+      }
+      .container div:first-child {
+        border-top-left-radius: var(--border-radius);
+        border-top-right-radius: var(--border-radius);
+      }
+      .container div:last-child {
+        border-bottom-left-radius: var(--border-radius);
+        border-bottom-right-radius: var(--border-radius);
+      }
+      .container a:link {
+        text-decoration: none;
+        padding: var(--default-size) calc(2 * var(--default-size));
+
+        background-color: hsl(0, 0%, 95%);
+
+        border-radius: calc(3 * var(--border-radius));
+      }
+      .sedans {
+        grid-area: sedans;
+        background-color: hsl(31, 77%, 52%);
+      }
+      .sedans .btn {
+        color: hsl(31, 77%, 52%);
+      }
+      .suvs {
+        grid-area: suvs;
+        background-color: hsl(184, 100%, 22%);
+      }
+      .suvs .btn {
+        color: hsl(184, 100%, 22%);
+      }
+      .luxury .btn {
+        color: hsl(179, 100%, 13%);
+      }
+      .luxury {
+        grid-area: luxury;
+        background-color: hsl(179, 100%, 13%);
+      }
+      .attribution {
+        font-size: 11px;
+        color: black;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+      @media only screen and (min-width: 810px) {
+        .container {
+          max-width: 70vw;
+          margin: calc(3 * var(--default-size)) var(--default-size);
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          grid-template-areas:
+            "sedans suvs luxury"
+            "learnmore1 learnmore2 learnmore2";
+        }
+        .container a:link {
+          margin-top: var(--default-size);
+        }
+        .container div:first-child {
+          border-top-left-radius: var(--border-radius);
+          border-bottom-left-radius: var(--border-radius);
+          border-top-right-radius: 0;
+        }
+        .container div:last-child {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: var(--border-radius);
+          border-top-right-radius: var(--border-radius);
+        }
+        .container p {
+          margin-bottom: calc(4 * var(--default-size));
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrapper">
+      <div class="container">
+        <div class="sedans">
+          <img src="images/icon-sedans.svg" alt="sedans" />
+          <h1>Sedands</h1>
+          <p>
+            Choose a sedan for its affordability and excellent fuel economy.
+            Ideal for cruising in the city or on your next road trip.
+          </p>
+          <a href="#" class="btn">Learn More</a>
+        </div>
+        <div class="suvs">
+          <img src="images/icon-suvs.svg" alt="suvs" />
+          <h1>Suvs</h1>
+          <p>
+            SUVs Take an SUV for its spacious interior, power, and versatility.
+            Perfect for your next family vacation and off-road adventures.
+          </p>
+          <a href="#" class="btn">Learn More</a>
+        </div>
+        <div class="luxury">
+          <img src="images/icon-luxury.svg" alt="suvs" />
+          <h1>Luxury</h1>
+          <p>
+            Luxury Cruise in the best car brands without the bloated prices.
+            Enjoy the enhanced comfort of a luxury rental and arrive in style.
+          </p>
+          <a href="#" class="btn">Learn More</a>
+        </div>
+      </div>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Minh Le</a>.
+      </div>
+    </main>
+  </body>
+</html>
