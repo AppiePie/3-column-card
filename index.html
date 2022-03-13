@@ -76,11 +76,12 @@
         border-bottom-left-radius: var(--border-radius);
         border-bottom-right-radius: var(--border-radius);
       }
-      .container a:link {
+      .btn {
         text-decoration: none;
         padding: var(--default-size) calc(2 * var(--default-size));
 
         background-color: hsl(0, 0%, 95%);
+        border: 3px solid hsl(0, 0%, 95%);
 
         border-radius: calc(3 * var(--border-radius));
       }
@@ -123,7 +124,7 @@
             "sedans suvs luxury"
             "learnmore1 learnmore2 learnmore2";
         }
-        .container a:link {
+        .btn {
           margin-top: var(--default-size);
         }
         .container div:first-child {
@@ -138,6 +139,12 @@
         }
         .container p {
           margin-bottom: calc(4 * var(--default-size));
+        }
+        .btn:hover {
+          background: transparent;
+          cursor: pointer;
+          color: hsl(0, 0%, 95%);
+          border: 3px solid hsl(0, 0%, 95%);
         }
       }
     </style>
